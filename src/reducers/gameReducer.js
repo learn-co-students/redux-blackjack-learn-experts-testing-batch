@@ -61,6 +61,24 @@ const initialState = {
 }
 
 export default function gameReducer(state=initialState.game, action) {
-  
-}
+  switch(action.type){
+    case 'RESET_GAME':
+      return initialState.game;
+    case 'EXECUTE_ROUND':
+      var userCards = [...state.userCards];
+      var aiCards = [...state.aiCards];
+      var newDeck = [...state.deck];
+      var userCard = newDeck.splice(Math.floor(Math.random() * newDeck.length-1), 1);
+      var aiCard = newDeck.splice(Math.floor(Math.random() * newDeck.length-1), 1);
+      userCards.push(userCard);
+      aiCards.push(aiCard);
 
+      return Object.assign({}, state, {
+        userCards: userCards,
+        deck: newDeck,
+        aiCards: aiCards
+      })
+    default:
+      return state;
+  }
+}
