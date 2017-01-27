@@ -301,13 +301,13 @@ describe('<Game/>', function () {
       />)
     })
     it('should have `deck` and `winner`, set by passing the winner down from the App component', function() {
-      expect(this.gameComponent.node.props.winner).toEqual(null)
-      expect(this.gameComponent.node.props.deck).toEqual([])
+      expect(this.gameComponent.unrendered.props.winner).toEqual(null)
+      expect(this.gameComponent.unrendered.props.deck).toEqual(initialState.deck)
     })
     
     it('should have props, `userCards` and `aiCards`, passed down from the App component', function() {
-      expect(this.gameComponent.node.props.userCards).toEqual([])
-      expect(this.gameComponent.node.props.aiCards).toEqual([])
+      expect(this.gameComponent.unrendered.props.userCards).toEqual([])
+      expect(this.gameComponent.unrendered.props.aiCards).toEqual([])
     })
     
     it('should have prop `newGame` that is a functions passed down from the App component', function() {
