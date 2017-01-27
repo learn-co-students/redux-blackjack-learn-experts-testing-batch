@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './App';
+import configureStore from './store/configureStore';
 
-
+import { resetGame, startGame } from './actions/gameActions';
 
 
 ReactDOM.render(
-  <App />,
+  <Provider>
+    
+  </Provider>,
   document.getElementById('container')
 );
 
