@@ -6,14 +6,10 @@ import configureStore from './store/configureStore';
 
 import { resetGame, startGame } from './actions/gameActions';
 
-const store = configureStore();
-
-store.dispatch(resetGame());
-// store.dispatch(startGame(store.getState().game.deck))
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+  <Provider>
+    
   </Provider>,
   document.getElementById('container')
 );
